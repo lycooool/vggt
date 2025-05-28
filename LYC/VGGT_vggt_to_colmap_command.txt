@@ -1,0 +1,19 @@
+python VGGT_vggt_to_colmap.py \
+  --image_dir ./images \
+  --output_dir ./colmap_output \
+  --conf_threshold 50 \
+  --mask_sky \
+  --mask_black_bg \
+  --mask_white_bg \
+  --binary \
+  --stride 2 \
+  --prediction_mode "Depthmap and Camera Branch"
+
+--- example ---
+
+python VGGT_vggt_to_colmap.py \
+  --image_dir ./data/Images/1 \
+  --output_dir ./VGGT_output/data/Images/1 \
+  --conf_threshold 0 \
+  --stride 10 \
+  --prediction_mode "Depthmap and Camera Branch"
