@@ -5,6 +5,8 @@
 # LICENSE file in the root directory of this source tree.
 
 import os
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 import cv2
 import torch
 import numpy as np
@@ -110,7 +112,7 @@ def handle_uploads(input_video, input_images):
 
     # Create a unique folder name
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-    target_dir = f"input_images_{timestamp}"
+    target_dir = f"gradio_tmp/input_images_{timestamp}"
     target_dir_images = os.path.join(target_dir, "images")
 
     # Clean up if somehow that folder already exists
